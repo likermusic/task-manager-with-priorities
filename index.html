@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Авторизация -->
+    <div id="login-section" class="login-section">
+      <h1>Task Manager</h1>
+      <p class="subtitle">Войдите, чтобы управлять своими задачами</p>
+      <input type="text" id="username-input" placeholder="Ваше имя" />
+      <button id="login-btn" class="btn primary">Войти</button>
+    </div>
+
+    <!-- Основное приложение -->
+    <div id="task-section" class="task-section hidden">
+      <header class="header">
+        <h2 id="welcome-text"></h2>
+        <button id="logout-btn" class="btn secondary">Выйти</button>
+      </header>
+
+      <!-- Добавление задачи -->
+      <form id="task-form" class="task-form">
+        <input type="text" id="task-title" placeholder="Введите задачу..." required />
+        <select id="task-priority">
+          <option value="низкий">Низкий</option>
+          <option value="средний">Средний</option>
+          <option value="высокий">Высокий</option>
+        </select>
+        <button type="submit" class="btn primary">Добавить</button>
+      </form>
+
+      <!-- Фильтр -->
+      <div class="filters">
+        <label for="filter-status">Показать:</label>
+        <select id="filter-status">
+          <option value="all">Все</option>
+          <option value="done">Выполненные</option>
+          <option value="todo">Невыполненные</option>
+        </select>
+      </div>
+
+      <!-- Список задач -->
+      <ul id="task-list" class="task-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
